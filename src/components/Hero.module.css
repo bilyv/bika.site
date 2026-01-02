@@ -1,0 +1,99 @@
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Effect */
+.bgBlob {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, var(--primary-light) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    background: linear-gradient(180deg, #000 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaGroup {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.secondaryBtn {
+    background: white;
+    border: 1px solid #e5e5e5;
+    color: var(--text-primary);
+}
+
+.secondaryBtn:hover {
+    background: #f9f9f9;
+    border-color: #d1d1d1;
+}
+
+.dashboardPreview {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    background: white;
+    aspect-ratio: 16/9;
+    /* Temp placeholder style */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8faff;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.dashboardPlaceholder {
+    /* This would be replaced by an actual image */
+    text-align: center;
+}
