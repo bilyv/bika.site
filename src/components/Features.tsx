@@ -9,30 +9,35 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const features = [
+export const features = [
     {
+        slug: "inventory",
         icon: Package,
         title: "Inventory Tracking",
         desc: "Real-time stock monitoring, low stock alerts, and automated reordering. Never run out of inventory again."
     },
     {
+        slug: "sales",
         icon: TrendingUp,
         title: "Sales Management",
         desc: "Track every sale, manage customer relationships, and analyze purchasing trends to boost your revenue."
     },
     {
+        slug: "expenses",
         icon: Receipt,
         title: "Expense Tracking",
         desc: "Monitor business spending, categorize expenses, and see exactly where your money is going."
     },
     {
+        slug: "finance",
         icon: Wallet,
         title: "Finance & Accounting",
         desc: "Complete financial overview with profit & loss statements, balance sheets, and cash flow analysis."
     },
     {
+        slug: "documents",
         icon: FileText,
-        title: "Document Managment",
+        title: "Document Management",
         desc: "Store and organize invoices, receipts, and contracts securely in one accessible location."
     }
 ];
@@ -44,22 +49,19 @@ export default function Features() {
                 <div className={styles.header}>
                     <h2 className={styles.title}>Everything You Need to Run Your Business</h2>
                     <p className={styles.subtitle}>
-                        Bika replaces your disconnected tools with one unified operating system.
+                        Bika replaces your disconnected tools with one unified operating system. Click a module to learn more.
                     </p>
                 </div>
 
                 <div className={styles.grid}>
                     {features.map((feature, index) => (
-                        <div key={index} className={styles.card}>
+                        <Link href={`/features/${feature.slug}`} key={index} className={styles.card}>
                             <div className={styles.iconWrapper}>
-                                <feature.icon size={24} />
+                                <feature.icon size={32} strokeWidth={1.5} />
                             </div>
-                            <div>
-                                <h3 className={styles.cardTitle}>{feature.title}</h3>
-                                <p className={styles.cardDesc}>{feature.desc}</p>
-                            </div>
-                            <Link href="#" className={styles.learnMore}>Learn more →</Link>
-                        </div>
+                            <h3 className={styles.cardTitle}>{feature.title}</h3>
+                            <p className={styles.cardDesc}>{feature.desc}</p>
+                        </Link>
                     ))}
                 </div>
             </div>

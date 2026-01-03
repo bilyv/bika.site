@@ -1,6 +1,5 @@
 .section {
     padding: 8rem 0;
-    background: #fff;
 }
 
 .header {
@@ -27,58 +26,69 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     padding: 0 1.5rem;
+    justify-items: center;
 }
 
+/* Glassmorphism Card Style from UIverse */
 .card {
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 1px solid #f0f0f0;
-    background: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 350px;
+    min-height: 380px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    padding: 3rem 2rem;
     gap: 1.5rem;
 }
 
 .card:hover {
-    border-color: #000;
+    border: 1px solid black;
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .iconWrapper {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: #f8f8f8;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .cardTitle {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: #000;
+    letter-spacing: -0.02em;
 }
 
 .cardDesc {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-.learnMore {
-    margin-top: auto;
-    color: #000;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -88,9 +98,5 @@
 
     .title {
         font-size: 2rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
     }
 }
