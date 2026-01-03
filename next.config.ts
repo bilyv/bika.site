@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   // Set the root to the current directory to stop scanning upwards for lockfiles
   // @ts-ignore
   turbopack: {
-    root: ".",
+    root: typeof process !== 'undefined' ? process.cwd() : ".",
   },
 };
 

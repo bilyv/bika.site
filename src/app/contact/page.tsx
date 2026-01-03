@@ -1,33 +1,38 @@
 
+'use client';
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import styles from "./contact.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
+    const { t } = useTranslation();
+
     return (
         <main>
             <Navbar />
             <section className={styles.contactSection}>
                 <div className="container">
                     <div className={styles.header}>
-                        <h1 className={styles.title}>Let's talk</h1>
+                        <h1 className={styles.title}>{t('contact.title')}</h1>
                         <p className={styles.subtitle}>
-                            Have questions about Bika? We're here to help you scale your business operations effectively.
+                            {t('contact.subtitle')}
                         </p>
                     </div>
 
                     <div className={styles.contentGrid}>
                         <div className={styles.infoCol}>
                             <div className={styles.infoItem}>
-                                <h3>Email us</h3>
+                                <h3>{t('contact.email')}</h3>
                                 <a href="mailto:hello@bika.site">hello@bika.site</a>
                             </div>
                             <div className={styles.infoItem}>
-                                <h3>Visit us</h3>
+                                <h3>{t('contact.visit')}</h3>
                                 <p>123 Business Way, San Francisco, CA</p>
                             </div>
                             <div className={styles.infoItem}>
-                                <h3>Socials</h3>
+                                <h3>{t('contact.socials')}</h3>
                                 <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
                                     <a href="#" style={{ fontSize: '1rem', color: '#666' }}>Twitter</a>
                                     <a href="#" style={{ fontSize: '1rem', color: '#666' }}>LinkedIn</a>
@@ -38,19 +43,19 @@ export default function ContactPage() {
                         <div className={styles.formCol}>
                             <form className={styles.form}>
                                 <div className={styles.inputGroup}>
-                                    <label htmlFor="name">Full Name</label>
+                                    <label htmlFor="name">{t('contact.name')}</label>
                                     <input type="text" id="name" placeholder="John Doe" />
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label htmlFor="email">Email Address</label>
+                                    <label htmlFor="email">{t('contact.emailAddress')}</label>
                                     <input type="email" id="email" placeholder="john@example.com" />
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label htmlFor="message">Message</label>
+                                    <label htmlFor="message">{t('contact.message')}</label>
                                     <textarea id="message" rows={5} placeholder="How can we help?"></textarea>
                                 </div>
                                 <button type="submit" className={styles.submitBtn}>
-                                    Send Message
+                                    {t('contact.send')}
                                 </button>
                             </form>
                         </div>

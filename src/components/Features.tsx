@@ -3,47 +3,8 @@
 
 import styles from './Features.module.css';
 import { useTranslation } from 'react-i18next';
-import {
-    Package,
-    TrendingUp,
-    Receipt,
-    Wallet,
-    FileText
-} from 'lucide-react';
 import Link from 'next/link';
-
-export const features = [
-    {
-        slug: "inventory",
-        icon: Package,
-        titleKey: "features.inventory.title",
-        descKey: "features.inventory.desc"
-    },
-    {
-        slug: "sales",
-        icon: TrendingUp,
-        titleKey: "features.sales.title",
-        descKey: "features.sales.desc"
-    },
-    {
-        slug: "expenses",
-        icon: Receipt,
-        titleKey: "features.expenses.title",
-        descKey: "features.expenses.desc"
-    },
-    {
-        slug: "finance",
-        icon: Wallet,
-        titleKey: "features.finance.title",
-        descKey: "features.finance.desc"
-    },
-    {
-        slug: "documents",
-        icon: FileText,
-        titleKey: "features.documents.title",
-        descKey: "features.documents.desc"
-    }
-];
+import { features } from '@/lib/features';
 
 export default function Features() {
     const { t } = useTranslation();
