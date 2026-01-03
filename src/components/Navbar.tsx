@@ -7,8 +7,8 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <div className={`container ${styles.navContainer}`}>
                 <div className={styles.links}>
-                    <Link href="#features" className={styles.link}>Overview</Link>
-                    <Link href="#contact" className={styles.link}>Contact</Link>
+                    <Link href="/#features" className={styles.link}>Overview</Link>
+                    <Link href="/contact" className={styles.link}>Contact</Link>
                 </div>
 
                 <Link href="/" className={styles.logo}>

@@ -10,10 +10,10 @@ export default function Footer() {
                     <div className={styles.logo}>bika<span>.</span></div>
 
                     <div className={styles.links}>
-                        <Link href="#features" className={styles.link}>Overview</Link>
-                        <Link href="#inventory" className={styles.link}>Inventory</Link>
-                        <Link href="#finance" className={styles.link}>Finance</Link>
-                        <Link href="#contact" className={styles.link}>Contact</Link>
+                        <Link href="/#features" className={styles.link}>Overview</Link>
+                        <Link href="/#inventory" className={styles.link}>Inventory</Link>
+                        <Link href="/#finance" className={styles.link}>Finance</Link>
+                        <Link href="/contact" className={styles.link}>Contact</Link>
                         <Link href="#" className={styles.link}>Privacy</Link>
                     </div>
 

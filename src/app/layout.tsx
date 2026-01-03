@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <div className="backgroundContainer">
+          <div className="backgroundDots"></div>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

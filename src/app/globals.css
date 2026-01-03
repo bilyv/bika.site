@@ -1,17 +1,16 @@
-
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  
+
   /* Blue accents */
   --primary: #0066FF;
   --primary-hover: #0052cc;
   --primary-light: #e6f0ff;
-  
+
   /* Text colors */
   --text-primary: #000000;
   --text-secondary: #4a4a4a;
-  
+
   /* Spacing */
   --container-padding: 2rem;
   --max-width: 1200px;
@@ -37,7 +36,12 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
 }
@@ -85,4 +89,27 @@ button {
 
 .section {
   padding: 5rem 0;
+}
+
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.backgroundDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
 }
