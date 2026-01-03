@@ -1,8 +1,13 @@
 
+'use client';
+
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import { useWaitlist } from './WaitlistContext';
 
 export default function Navbar() {
+    const { openWaitlist } = useWaitlist();
+
     return (
         <nav className={styles.navbar}>
             <div className={`container ${styles.navContainer}`}>
@@ -16,9 +21,9 @@ export default function Navbar() {
                 </Link>
 
                 <div className={styles.actions}>
-                    <Link href="/signup" className={styles.waitlistBtn}>
+                    <button onClick={() => openWaitlist()} className={styles.waitlistBtn}>
                         Join waitlist
-                    </Link>
+                    </button>
                 </div>
             </div>
         </nav>

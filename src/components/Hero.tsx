@@ -1,9 +1,20 @@
 
+'use client';
+
+import { useState } from 'react';
 import styles from './Hero.module.css';
-import Link from 'next/link';
 import Image from 'next/image';
+import { useWaitlist } from './WaitlistContext';
 
 export default function Hero() {
+    const [email, setEmail] = useState('');
+    const { openWaitlist } = useWaitlist();
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        openWaitlist(email);
+    };
+
     return (
         <section className={styles.hero}>
             <div className="container">
@@ -16,12 +27,19 @@ export default function Hero() {
                         Your inventory, sales, and finance—all in one place.<br />
                         One simple, unified view of your business growth.
                     </p>
-                    <div className={styles.ctaGroup}>
-                        <div className={styles.inputPlaceholder}>Enter email</div>
-                        <Link href="/signup" className={styles.secondaryBtn}>
+                    <form className={styles.ctaGroup} onSubmit={handleSubmit}>
+                        <input
+                            type="email"
+                            placeholder="Enter email"
+                            className={styles.input}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <button type="submit" className={styles.secondaryBtn}>
                             Join waitlist
-                        </Link>
-                    </div>
+                        </button>
+                    </form>
                 </div>
 
                 <div className={styles.dashboardPreview}>

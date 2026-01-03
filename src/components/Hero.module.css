@@ -54,14 +54,23 @@
     opacity: 0.9;
 }
 
-.inputPlaceholder {
+.input {
     background: #f0f0f0;
     padding: 0.85rem 1.8rem;
     border-radius: 100px;
-    color: #999;
+    border: 1px solid transparent;
+    color: #000;
     font-size: 0.95rem;
-    width: 250px;
+    width: 280px;
     text-align: left;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    background: #fff;
+    border-color: #000;
 }
 
 .dashboardPreview {

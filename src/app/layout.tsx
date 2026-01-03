@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { WaitlistProvider } from "@/components/WaitlistContext";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
@@ -20,7 +22,9 @@ export default function RootLayout({
         <div className="backgroundContainer">
           <div className="backgroundDots"></div>
         </div>
-        {children}
+        <WaitlistProvider>
+          {children}
+        </WaitlistProvider>
       </body>
     </html>
   );
