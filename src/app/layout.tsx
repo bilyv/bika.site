@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { WaitlistProvider } from "@/components/WaitlistContext";
+import ClientEntry from "@/components/ClientEntry";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -22,9 +23,11 @@ export default function RootLayout({
         <div className="backgroundContainer">
           <div className="backgroundDots"></div>
         </div>
-        <WaitlistProvider>
-          {children}
-        </WaitlistProvider>
+        <ClientEntry>
+          <WaitlistProvider>
+            {children}
+          </WaitlistProvider>
+        </ClientEntry>
       </body>
     </html>
   );

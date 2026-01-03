@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './WaitlistModal.module.css';
 import { X } from 'lucide-react';
 
@@ -13,6 +14,7 @@ interface WaitlistModalProps {
 
 export default function WaitlistModal({ isOpen, onClose, initialEmail = '' }: WaitlistModalProps) {
     const [email, setEmail] = useState(initialEmail);
+    const { t } = useTranslation();
 
     if (!isOpen) return null;
 
@@ -29,14 +31,14 @@ export default function WaitlistModal({ isOpen, onClose, initialEmail = '' }: Wa
                 <button className={styles.closeBtn} onClick={onClose}>
                     <X size={20} />
                 </button>
-                <h2 className={styles.title}>Join the waitlist</h2>
+                <h2 className={styles.title}>{t('waitlist.title')}</h2>
                 <p className={styles.desc}>
-                    We're currently in invite-only beta. Enter your email to get early access.
+                    {t('waitlist.desc')}
                 </p>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="email"
-                        placeholder="you@gmail.com"
+                        placeholder={t('waitlist.placeholder')}
                         className={styles.input}
                         required
                         value={email}
@@ -44,7 +46,7 @@ export default function WaitlistModal({ isOpen, onClose, initialEmail = '' }: Wa
                         autoFocus
                     />
                     <button type="submit" className={styles.submitBtn}>
-                        Join waitlist
+                        {t('waitlist.submit')}
                     </button>
                 </form>
             </div>

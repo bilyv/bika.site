@@ -1,0 +1,120 @@
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.screen.fadeOut {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+}
+
+.languageButtons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.langBtn {
+    padding: 1.25rem 3rem;
+    border-radius: 100px;
+    background: #f5f5f5;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.flag {
+    font-size: 1.5rem;
+}
+
+.langBtn:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.langBtn:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .languageButtons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        gap: 1rem;
+    }
+
+    .langBtn {
+        width: 100%;
+    }
+}

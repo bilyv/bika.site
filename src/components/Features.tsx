@@ -1,5 +1,8 @@
 
+'use client';
+
 import styles from './Features.module.css';
+import { useTranslation } from 'react-i18next';
 import {
     Package,
     TrendingUp,
@@ -13,43 +16,45 @@ export const features = [
     {
         slug: "inventory",
         icon: Package,
-        title: "Inventory Tracking",
-        desc: "Real-time stock monitoring, low stock alerts, and automated reordering. Never run out of inventory again."
+        titleKey: "features.inventory.title",
+        descKey: "features.inventory.desc"
     },
     {
         slug: "sales",
         icon: TrendingUp,
-        title: "Sales Management",
-        desc: "Track every sale, manage customer relationships, and analyze purchasing trends to boost your revenue."
+        titleKey: "features.sales.title",
+        descKey: "features.sales.desc"
     },
     {
         slug: "expenses",
         icon: Receipt,
-        title: "Expense Tracking",
-        desc: "Monitor business spending, categorize expenses, and see exactly where your money is going."
+        titleKey: "features.expenses.title",
+        descKey: "features.expenses.desc"
     },
     {
         slug: "finance",
         icon: Wallet,
-        title: "Finance & Accounting",
-        desc: "Complete financial overview with profit & loss statements, balance sheets, and cash flow analysis."
+        titleKey: "features.finance.title",
+        descKey: "features.finance.desc"
     },
     {
         slug: "documents",
         icon: FileText,
-        title: "Document Management",
-        desc: "Store and organize invoices, receipts, and contracts securely in one accessible location."
+        titleKey: "features.documents.title",
+        descKey: "features.documents.desc"
     }
 ];
 
 export default function Features() {
+    const { t } = useTranslation();
+
     return (
         <section className={styles.section} id="features">
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.title}>Everything You Need to Run Your Business</h2>
+                    <h2 className={styles.title}>{t('features.title')}</h2>
                     <p className={styles.subtitle}>
-                        Bika replaces your disconnected tools with one unified operating system. Click a module to learn more.
+                        {t('features.subtitle')}
                     </p>
                 </div>
 
@@ -59,8 +64,8 @@ export default function Features() {
                             <div className={styles.iconWrapper}>
                                 <feature.icon size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className={styles.cardTitle}>{feature.title}</h3>
-                            <p className={styles.cardDesc}>{feature.desc}</p>
+                            <h3 className={styles.cardTitle}>{t(feature.titleKey)}</h3>
+                            <p className={styles.cardDesc}>{t(feature.descKey)}</p>
                         </Link>
                     ))}
                 </div>

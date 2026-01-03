@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Hero.module.css';
 import Image from 'next/image';
 import { useWaitlist } from './WaitlistContext';
@@ -9,6 +10,7 @@ import { useWaitlist } from './WaitlistContext';
 export default function Hero() {
     const [email, setEmail] = useState('');
     const { openWaitlist } = useWaitlist();
+    const { t } = useTranslation();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,24 +22,22 @@ export default function Hero() {
             <div className="container">
                 <div className={styles.heroContent}>
                     <h1 className={styles.title}>
-                        Master Your Business<br />
-                        Efficiency with Bika
+                        {t('hero.title')}
                     </h1>
                     <p className={styles.description}>
-                        Your inventory, sales, and finance—all in one place.<br />
-                        One simple, unified view of your business growth.
+                        {t('hero.subtitle')}
                     </p>
                     <form className={styles.ctaGroup} onSubmit={handleSubmit}>
                         <input
                             type="email"
-                            placeholder="Enter email"
+                            placeholder={t('hero.emailPlaceholder')}
                             className={styles.input}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                         <button type="submit" className={styles.secondaryBtn}>
-                            Join waitlist
+                            {t('nav.joinWaitlist')}
                         </button>
                     </form>
                 </div>
