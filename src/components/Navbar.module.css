@@ -4,28 +4,16 @@
     left: 0;
     right: 0;
     height: 80px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navContainer {
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.03em;
-}
-
-.logo span {
-    color: var(--primary);
 }
 
 .links {
@@ -37,26 +25,44 @@
 .link {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-secondary);
-    transition: color 0.2s;
+    color: var(--text-primary);
+    transition: opacity 0.2s;
 }
 
 .link:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #000;
+    letter-spacing: -0.05em;
+    display: flex;
+    justify-content: center;
+}
+
+.logo span {
     color: var(--primary);
 }
 
 .actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
+    justify-content: flex-end;
 }
 
-.loginBtn {
+.waitlistBtn {
+    background: #f0f0f0;
+    color: #000;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
     font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: 0.875rem;
+    transition: background 0.2s;
 }
 
-.loginBtn:hover {
-    color: var(--primary);
+.waitlistBtn:hover {
+    background: #e5e5e5;
 }
